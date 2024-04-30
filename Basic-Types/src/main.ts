@@ -42,9 +42,49 @@ const person1 = {
 // person.isProgrammer = true;
 // this will give error because we have not defined the property in the object
 
-// Solution :- we can define the property as optional by adding ? after the property name like this isProgrammer?: boolean in the object type definition 
+// Solution :- we can define the property as optional by adding ? after the property name like this isProgrammer?: boolean in the object type definition
 
 const person: { name: string; age: number; isProgrammaer?: boolean } = {
   name: "Kunal",
   age: 21,
+};
+
+// Types and Interface
+
+// interface is used to define the structure of an object in typescript
+interface Person {
+  name: string;
+  age: number;
+  isProgrammer: boolean;
+}
+
+type PersonType = {
+  name: string;
+  age: number;
+  isProgrammer?: boolean;
+};
+
+const person3: PersonType = {
+  name: "Jay",
+  age: 20,
+  isProgrammer: true,
+};
+
+const person2: Person = {
+  name: "Kunal",
+  age: 21,
+  isProgrammer: true,
+};
+
+type person4 = {
+  name: string;
+  age: number;
+  isProgrammer: boolean;
+  friends: string[];
+  address: {
+    city: string;
+    state: string;
+    country: string;
+    postalCode: number;
+  };
 };
